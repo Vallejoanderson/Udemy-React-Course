@@ -8,11 +8,9 @@ const PrimeraApp = ( { saludo, subtitulo } ) => {
     //     throw new Error('El saludo es necesario');
     // }
 
-    console.log( saludo );
-
     return (
         <>
-            <h1> { saludo }</h1>
+            <h1> { saludo } </h1>
             {/* <pre>{ JSON.stringify( saludo, null, 3 ) }</pre> */}
             <p>{ subtitulo }</p>
         </>
