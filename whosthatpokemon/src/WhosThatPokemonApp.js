@@ -3,17 +3,26 @@ import { useState } from 'react'
 
 const WhosThatPokemonApp = () => {
 
-  const [ image, setImage ] = useState('');
+  const [ pokemon, setPokemon ] = useState({
+    name: '',
+    image: '',
+  });
 
   getPokemon()
-    .then( img => 
-          { setImage(img) }
+    .then( img =>
+          console.log('Hola', img.pname); 
+          { setPokemon(
+            {
+              name: img.name,
+              image: img.image,
+            }
+          )}
     )
 
   return(
     <div>
         <p>Hola</p>
-        <img  src={ image } alt="Random pokemon"/>
+        <img  src={ pokemon } alt="Random pokemon"/>
     </div>
   )
 }
