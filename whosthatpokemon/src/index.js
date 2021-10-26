@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+<<<<<<< HEAD
 
 export const getPokemons = async() => {
 
@@ -14,9 +15,11 @@ export const getPokemons = async() => {
 }
 
 getPokemons();
+=======
+import WhosThatPokemonApp from './WhosThatPokemonApp.js'
+>>>>>>> c083308daf91e4115407bc913264060eac8fd27c
 
 ReactDOM.render(
-  <React.StrictMode>
-  </React.StrictMode>,
+  <WhosThatPokemonApp />,
   document.getElementById('root')
 );
