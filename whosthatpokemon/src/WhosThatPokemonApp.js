@@ -1,5 +1,5 @@
 import getPokemon from './helpers/getPokemon'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const WhosThatPokemonApp = () => {
 
@@ -8,21 +8,21 @@ const WhosThatPokemonApp = () => {
     image: '',
   });
 
-  getPokemon()
-    .then( img =>
-          console.log('Hola', img.pname); 
-          { setPokemon(
-            {
-              name: img.name,
-              image: img.image,
-            }
-          )}
-    )
+
+  useEffect(() => {
+    getPokemon()
+      .then( newPokemon => setPokemon({
+        name: newPokemon.name,
+        image: newPokemon.img,
+      })
+      )
+  }, [])
+
 
   return(
     <div>
-        <p>Hola</p>
-        <img  src={ pokemon } alt="Random pokemon"/>
+        <img  src={ pokemon.image } alt="Random pokemon"/>
+        <p>{ pokemon.name }</p>
     </div>
   )
 }
