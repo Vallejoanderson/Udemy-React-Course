@@ -1,5 +1,6 @@
 import getPokemon from './helpers/getPokemon'
 import { useState, useEffect } from 'react'
+import { PokemonsList } from './components/PokemonsList.js';
 
 const WhosThatPokemonApp = () => {
 
@@ -22,7 +23,7 @@ const WhosThatPokemonApp = () => {
   return(
     <div>
         <img  src={ pokemon.image } alt="Random pokemon"/>
-        <p>{ pokemon.name }</p>
+        <PokemonsList />
     </div>
   )
 }
