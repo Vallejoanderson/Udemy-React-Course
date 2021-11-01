@@ -8,8 +8,8 @@ const getPokemon = async() => {
       
     const results  = await resp.json();
     
-    const { front_default:img } = results.sprites.other["official-artwork" ];
     const { name }              = results.species;
+    const { front_default:img } = results.sprites.other["official-artwork" ];
 
     return ({
         name,

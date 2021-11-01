@@ -1,28 +1,13 @@
-import getPokemon from './helpers/getPokemon'
-import { useState, useEffect } from 'react'
 import { PokemonsList } from './components/PokemonsList.js';
+import { useFetchPokemons } from './hooks/useFetchPokemons.js'
+import { DisplayPokemon } from './components/DisplayPokemon'
 
 const WhosThatPokemonApp = () => {
 
-  const [ pokemon, setPokemon ] = useState({
-    name: '',
-    image: '',
-  });
-
-
-  useEffect(() => {
-    getPokemon()
-      .then( newPokemon => setPokemon({
-        name: newPokemon.name,
-        image: newPokemon.img,
-      })
-      )
-  }, [])
-
-
+  const pokemons = useFetchPokemons();
   return(
     <div>
-        <img  src={ pokemon.image } alt="Random pokemon"/>
+        <DisplayPokemon pokemones={ [...pokemons] } />
         <PokemonsList />
     </div>
   )
