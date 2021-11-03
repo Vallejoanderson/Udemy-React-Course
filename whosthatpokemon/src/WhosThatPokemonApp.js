@@ -1,15 +1,16 @@
-import { PokemonsList } from './components/PokemonsList.js';
-import { RandomPokemons } from './helpers/RandomPokemons.js'
-import { DisplayPokemon } from './components/DisplayPokemon'
-import { useState } from 'react'
+import { PokemonsList } from './components/PokemonsList.js'
+import { DisplayPokemon } from './components/DisplayPokemon.js'
+import { useGetRandomPokemons } from './hooks/useGetRandomPokemons.js'
+import { useEffect } from 'react/cjs/react.development'
 
 const WhosThatPokemonApp = () => {
+  useEffect( () => { 
+    const pokemones = useGetRandomPokemons();
+  }, [])
 
-  const [ pokemons, setPokemons ] = setState([]);
-  setPokemons( pokemons => RandomPokemons() );
   return(
     <div>
-        {/* <DisplayPokemon pokemones={ [...pokemons] } /> */}
+        <DisplayPokemon pokemones={ [...pokemones] } />
         <PokemonsList />
     </div>
   )
