@@ -1,13 +1,15 @@
 import { PokemonsList } from './components/PokemonsList.js';
-import { useFetchPokemons } from './hooks/useFetchPokemons.js'
+import { RandomPokemons } from './helpers/RandomPokemons.js'
 import { DisplayPokemon } from './components/DisplayPokemon'
+import { useState } from 'react'
 
 const WhosThatPokemonApp = () => {
 
-  const pokemons = useFetchPokemons();
+  const [ pokemons, setPokemons ] = setState([]);
+  setPokemons( pokemons => RandomPokemons() );
   return(
     <div>
-        <DisplayPokemon pokemones={ [...pokemons] } />
+        {/* <DisplayPokemon pokemones={ [...pokemons] } /> */}
         <PokemonsList />
     </div>
   )
