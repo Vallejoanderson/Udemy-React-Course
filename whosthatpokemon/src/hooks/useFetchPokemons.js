@@ -9,7 +9,7 @@ export const useFetchPokemons = () => {
         {
             getPokemon()
                 .then( newPokemon => setPokemons( all => [ 
-                    { name: newPokemon.name, image: newPokemon.img }, ...all]) )
+                    { name: newPokemon.name, image: newPokemon.img }, ...all ]) )
         }
     }, []
     )

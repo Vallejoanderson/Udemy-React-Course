@@ -1,11 +1,10 @@
+import { useEffect } from "react";
 
 export const DisplayPokemon = ( { pokemones } ) => {
+    console.log(pokemones)
     const randomNumber = Math.floor(Math.random() * 3);
-    const myPokemon = pokemones[randomNumber].image;
-    console.log(myPokemon);
-    // const { name, image } = pokemones[randomNumber];
-    // console.log(name, image)
+    const myPokemon = pokemones[randomNumber];
     return(
-        <img  src={ myPokemon.image } alt="Random pokemon"/>
+        <img  src="" alt="Random pokemon" />
         );
 }
