@@ -8,7 +8,8 @@ export const useGetRandomPokemons = () => {
     for( let i = 0; i < 4; i++)
     {
         getPokemon()
-             .then( newPokemon => [{ name: newPokemon.name, image: newPokemon.img }, ...arr ] ) 
+             .then( newPokemon => 
+                arr = [{ name: newPokemon.name, image: newPokemon.img }, ...arr ] ) 
     }
 
     setPokemons( [...arr] );
