@@ -10,7 +10,7 @@ export const useGetRandomPokemons = () => {
             .then( P => setPokemons(P) );
     }, [])
 
-    // console.log(pokemons)
+    console.log(pokemons)
 
     return pokemons;
 
