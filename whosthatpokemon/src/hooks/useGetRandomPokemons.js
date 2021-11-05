@@ -1,18 +1,16 @@
 import { useState } from 'react'
+import { useEffect } from 'react/cjs/react.development';
 import getPokemon from '../helpers/getPokemon.js'
 
 export const useGetRandomPokemons = () => {
 
-    const arr = [];
     const [ pokemons, setPokemons ] = useState([]);
-    for( let i = 0; i < 4; i++)
-    {
-        getPokemon()
-             .then( newPokemon => 
-                arr = [{ name: newPokemon.name, image: newPokemon.img }, ...arr ] ) 
-    }
+    useEffect( () => {
+        Promise.all( [ getPokemon(), getPokemon(), getPokemon(), getPokemon() ] )
+            .then( P => setPokemons(P) );
+    }, [])
 
-    setPokemons( [...arr] );
+    // console.log(pokemons)
 
     return pokemons;
 

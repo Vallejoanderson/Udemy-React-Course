@@ -4,11 +4,11 @@ import { useGetRandomPokemons } from './hooks/useGetRandomPokemons.js'
 
 
 const WhosThatPokemonApp = () => {
-  const pokemones = useGetRandomPokemons();
-
+  console.log( useGetRandomPokemons() );
   return(
     <div>
-        <DisplayPokemon pokemones={ [...pokemones] } />
+
+        <DisplayPokemon pokemones={ useGetRandomPokemons() } />
         <PokemonsList />
     </div>
   )

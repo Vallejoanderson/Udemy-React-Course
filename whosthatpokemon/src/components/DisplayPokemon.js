@@ -1,8 +1,8 @@
 
 
-export function DisplayPokemon({ pokemones }) {
+export const DisplayPokemon = async({ pokemones }) => {
     // const randomNumber = Math.floor(Math.random() * 3);
-    // const image = pokemones[randomNumber].image;
+    // const image = await pokemones[randomNumber].image;
     console.log(pokemones);
     return (
         <img src="" alt="Random pokemon" />
