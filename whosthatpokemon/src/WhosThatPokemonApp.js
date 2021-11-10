@@ -1,15 +1,22 @@
 import { PokemonsList } from './components/PokemonsList.js'
-import { DisplayPokemon } from './components/DisplayPokemon.js'
-import { useGetRandomPokemons } from './hooks/useGetRandomPokemons.js'
+import getPokemon from './helpers/getPokemon'
+import { useEffect, useState } from 'react'
+import { DisplayPokemon } from './components/DisplayPokemon'
 
 
 const WhosThatPokemonApp = () => {
-  const pokemons = useGetRandomPokemons();
+
+  const [ pokemons, setPokemons ] = useState([]);
+  
+  useEffect( () => {
+      Promise.all( [ getPokemon(), getPokemon(), getPokemon(), getPokemon() ] )
+          .then( P => setPokemons(P) );
+  }, [])
+
   return(
     <div>
-
-        {/* <DisplayPokemon pokemones={ pokemons } /> */}
-        <PokemonsList />
+        <DisplayPokemon pokemons= { pokemons } />
+        <PokemonsList pokemons={ pokemons } />
     </div>
   )
 }

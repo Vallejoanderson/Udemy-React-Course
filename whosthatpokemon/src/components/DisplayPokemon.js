@@ -1,10 +1,15 @@
 
-
-export const DisplayPokemon = async({ pokemones }) => {
-    // const randomNumber = Math.floor(Math.random() * 3);
-    // const image = await pokemones[randomNumber].image;
-    console.log(pokemones);
+export const DisplayPokemon = ( { pokemons } ) => {
+    const randomPokemon = Math.floor(Math.random() * 4);
     return (
-        <img src="" alt="Random pokemon" />
+        <>
+            {
+                pokemons.map( (e, i) => {
+                    if( i === randomPokemon ){
+                        return <img src={ e.img } />
+                    }
+                })
+            }
+        </>
     );
 }

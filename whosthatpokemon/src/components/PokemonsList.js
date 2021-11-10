@@ -1,12 +1,16 @@
 
 
-export const PokemonsList = () => {
+export const PokemonsList = ( { pokemons } ) => {
+    const checkChoice = () => {
+        
+    }
+
     return(
-            <>
-                <p>Pokemon 1</p>
-                <p>Pokemon 2</p>
-                <p>Pokemon 3</p>
-                <p>Pokemon 4</p>
-            </>
+        <ol>
+            {
+                pokemons.map( pokemon => 
+                    <button onClick={ () => { console.log( pokemon.name ) } }>{ pokemon.name }</button>)
+            }
+        </ol>
     );
 }
